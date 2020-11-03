@@ -1,6 +1,6 @@
 const inquirer = require("inquirer");
 const generateMarkdown = require("./utils/generateMarkdown.js");
-
+const fs = require("fs");
 const questions = [
   {
     name: "title",
@@ -39,6 +39,10 @@ const questions = [
 inquirer.prompt(questions).then(gotAnswers);
 
 function gotAnswers(answers) {
-  console.log(answers);
-  console.log(generateMarkdown(answers));
+  let content = generateMarkdown(answers);
+  fs.writeFile("./generated_readme/README.md", content, createdFile);
+}
+function createdFile(err) {
+  if (err) throw err;
+  console.log("readme created");
 }
