@@ -1,6 +1,7 @@
-var inquirer = require("inquirer");
+const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
-var questions = [
+const questions = [
   {
     name: "title",
     message: "What is the title of your project?",
@@ -39,4 +40,5 @@ inquirer.prompt(questions).then(gotAnswers);
 
 function gotAnswers(answers) {
   console.log(answers);
+  console.log(generateMarkdown(answers));
 }
