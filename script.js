@@ -19,6 +19,12 @@ const questions = [
     message: "Please provide usage information.",
   },
   {
+    name: "license",
+    message: "Please choose from the following licenses:",
+    type: "list",
+    choices: ["Apache 2.0", "GPL 3.0", "MIT"],
+  },
+  {
     name: "contribution",
     message: "What are you contribution guidelines?",
   },
